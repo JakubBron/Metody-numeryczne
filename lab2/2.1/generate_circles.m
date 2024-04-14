@@ -1,0 +1,38 @@
+function [circles, index_number] = generate_circles(a, r_max, n_max)
+index_number = 193208; % numer Twojego indeksu
+L1 = 8;
+
+circles = zeros(n_max, 3);
+counter = 0;
+while counter < n_max
+    x = rand() * a;
+    y = rand() * a;
+    r = rand() * r_max;
+    
+    circle = [x;y;r];
+    isValidCircle = 0;
+    if x - r >= 0 && x + r <= a && y - r >= 0 && y + r <= a
+        isValidCircle = 1;
+    end 
+
+    if isValidCircle
+        isOverlap = false;
+        for j = 1:counter
+            prevCircle = circles(j, :);
+            prevX = prevCircle(1);
+            prevY = prevCircle(2);
+            prevR = prevCircle(3);
+                
+            distance = sqrt((x - prevX)^2 + (y - prevY)^2);
+            if distance <= r + prevR
+                isOverlap = true;
+                break;
+            end
+        end
+            
+        if ~isOverlap
+            counter = counter + 1;
+            circles(counter, :) = circle;
+        end
+    end
+end

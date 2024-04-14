@@ -1,0 +1,20 @@
+Metoda bezposrednia
+Czas [s]: 0.360663
+Blad: 0.000000000000706
+
+Metoda Jacobiego
+Czas [s]: 0.785748
+Blad: Inf
+Liczba iteracji: 617 / 1000
+
+Metoda Gaussa-Seidela
+Czas [s]: 143.016711
+Blad: 64367347963.391128540039062
+Liczba iteracji: 1000 / 1000
+
+Metody iteracyjne nie sprawdzają się, gdyż błąd nie zbiega do zera, a wręcz przeciwnie - dąży do nieskończoności. 
+Metoda bezpośrednia jest zdecydowanie lepsza, gdyż błąd jest bardzo mały (praktycznie 0%), a czas wykonania jest krótki.
+Metoda Jacobiego jest znacznie szybsza od metody Gaussa-Seidela, za to jej błąd narasta zdecydowanie szybciej 
+niż błąd uzyskany przy wyliczeniach metodą Gaussa-Seidela. Już przy ok. 61% z zadanej liczby iteracji błąd jest tak 
+wielki, że Matlab interpteruje go jako nieskończoność. Tempo wzrostu błędu dla każdej z metod iteracyjnych jest 
+przedstawiony na wykresie "zadanie6.png".
