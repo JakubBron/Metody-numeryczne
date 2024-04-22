@@ -1,0 +1,59 @@
+=========================================================================================================================================================
+Profit/loss report for WIG20 W1; transaction every BUY/SELL signal (at least W1 apart, if bought, need to be sold).
+Buy date: 2005-12-25 | Buy price: 2596.16    | Sell date: 2006-03-05 | Sell price: 2941.38    | Profit: 345220.00  13.297 % | Duration: 70 days 00:00:00
+Buy date: 2006-04-23 | Buy price: 3023.69    | Sell date: 2006-05-28 | Sell price: 3031.52    | Profit: 7830.00    0.259  % | Duration: 35 days 00:00:00
+Buy date: 2006-07-30 | Buy price: 3024.01    | Sell date: 2006-10-01 | Sell price: 2914.20    | Profit: -109810.00 -3.631 % | Duration: 63 days 00:00:00
+Buy date: 2006-10-08 | Buy price: 2918.83    | Sell date: 2007-01-07 | Sell price: 3285.49    | Profit: 366660.00  12.562 % | Duration: 91 days 00:00:00
+Buy date: 2007-01-21 | Buy price: 3262.98    | Sell date: 2007-02-18 | Sell price: 3417.38    | Profit: 154400.00  4.732  % | Duration: 28 days 00:00:00
+Buy date: 2007-02-25 | Buy price: 3374.21    | Sell date: 2007-03-04 | Sell price: 3508.99    | Profit: 134780.00  3.994  % | Duration: 7 days 00:00:00
+Buy date: 2007-04-08 | Buy price: 3520.24    | Sell date: 2007-05-20 | Sell price: 3568.93    | Profit: 48690.00   1.383  % | Duration: 42 days 00:00:00
+Buy date: 2007-06-03 | Buy price: 3554.52    | Sell date: 2007-07-29 | Sell price: 3825.11    | Profit: 270590.00  7.613  % | Duration: 56 days 00:00:00
+Buy date: 2007-10-14 | Buy price: 3738.50    | Sell date: 2007-11-18 | Sell price: 3606.62    | Profit: -131880.00 -3.528 % | Duration: 35 days 00:00:00
+Buy date: 2008-03-30 | Buy price: 2821.30    | Sell date: 2008-06-29 | Sell price: 2686.78    | Profit: -134520.00 -4.768 % | Duration: 91 days 00:00:00
+Buy date: 2008-08-17 | Buy price: 2608.95    | Sell date: 2008-09-14 | Sell price: 2503.38    | Profit: -105570.00 -4.046 % | Duration: 28 days 00:00:00
+Buy date: 2008-09-28 | Buy price: 2433.87    | Sell date: 2008-10-05 | Sell price: 2457.75    | Profit: 23880.00   0.981  % | Duration: 7 days 00:00:00
+Buy date: 2008-12-14 | Buy price: 1732.74    | Sell date: 2009-07-12 | Sell price: 1828.27    | Profit: 95530.00   5.513  % | Duration: 210 days 00:00:00
+Buy date: 2009-07-26 | Buy price: 1897.32    | Sell date: 2009-09-06 | Sell price: 2235.91    | Profit: 338590.00  17.846 % | Duration: 42 days 00:00:00
+Buy date: 2009-10-25 | Buy price: 2272.37    | Sell date: 2009-11-01 | Sell price: 2412.18    | Profit: 139810.00  6.153  % | Duration: 7 days 00:00:00
+Buy date: 2010-03-21 | Buy price: 2415.82    | Sell date: 2010-05-16 | Sell price: 2336.99    | Profit: -78830.00  -3.263 % | Duration: 56 days 00:00:00
+Buy date: 2010-08-01 | Buy price: 2460.96    | Sell date: 2010-11-28 | Sell price: 2655.84    | Profit: 194880.00  7.919  % | Duration: 119 days 00:00:00
+Buy date: 2010-12-12 | Buy price: 2712.09    | Sell date: 2010-12-19 | Sell price: 2763.26    | Profit: 51170.00   1.887  % | Duration: 7 days 00:00:00
+Buy date: 2011-03-27 | Buy price: 2779.69    | Sell date: 2011-05-22 | Sell price: 2822.57    | Profit: 42880.00   1.543  % | Duration: 56 days 00:00:00
+Buy date: 2011-10-23 | Buy price: 2300.65    | Sell date: 2012-04-08 | Sell price: 2286.53    | Profit: -14120.00  -0.614 % | Duration: 168 days 00:00:00
+Buy date: 2012-06-24 | Buy price: 2233.38    | Sell date: 2012-11-04 | Sell price: 2320.08    | Profit: 86700.00   3.882  % | Duration: 133 days 00:00:00
+Buy date: 2012-12-16 | Buy price: 2450.74    | Sell date: 2013-02-03 | Sell price: 2542.32    | Profit: 91580.00   3.737  % | Duration: 49 days 00:00:00
+Buy date: 2013-05-26 | Buy price: 2391.07    | Sell date: 2013-06-30 | Sell price: 2233.64    | Profit: -157430.00 -6.584 % | Duration: 35 days 00:00:00
+Buy date: 2013-07-21 | Buy price: 2302.81    | Sell date: 2013-09-08 | Sell price: 2384.22    | Profit: 81410.00   3.535  % | Duration: 49 days 00:00:00
+Buy date: 2013-09-15 | Buy price: 2238.98    | Sell date: 2013-12-15 | Sell price: 2479.16    | Profit: 240180.00  10.727 % | Duration: 91 days 00:00:00
+Buy date: 2014-02-23 | Buy price: 2482.75    | Sell date: 2014-03-16 | Sell price: 2435.15    | Profit: -47600.00  -1.917 % | Duration: 21 days 00:00:00
+Buy date: 2014-03-30 | Buy price: 2365.96    | Sell date: 2014-05-18 | Sell price: 2387.81    | Profit: 21850.00   0.924  % | Duration: 49 days 00:00:00
+Buy date: 2014-05-25 | Buy price: 2392.89    | Sell date: 2014-07-06 | Sell price: 2399.63    | Profit: 6740.00    0.282  % | Duration: 42 days 00:00:00
+Buy date: 2014-08-24 | Buy price: 2415.76    | Sell date: 2014-10-19 | Sell price: 2392.62    | Profit: -23140.00  -0.958 % | Duration: 56 days 00:00:00
+Buy date: 2014-11-02 | Buy price: 2426.20    | Sell date: 2014-11-09 | Sell price: 2463.68    | Profit: 37480.00   1.545  % | Duration: 7 days 00:00:00
+Buy date: 2015-02-15 | Buy price: 2354.47    | Sell date: 2015-06-07 | Sell price: 2437.81    | Profit: 83340.00   3.540  % | Duration: 112 days 00:00:00
+Buy date: 2015-10-11 | Buy price: 2036.32    | Sell date: 2015-11-29 | Sell price: 2021.99    | Profit: -14330.00  -0.704 % | Duration: 49 days 00:00:00
+Buy date: 2016-02-07 | Buy price: 1780.25    | Sell date: 2016-05-15 | Sell price: 1852.71    | Profit: 72460.00   4.070  % | Duration: 98 days 00:00:00
+Buy date: 2016-08-07 | Buy price: 1759.74    | Sell date: 2017-04-02 | Sell price: 2234.82    | Profit: 475080.00  26.997 % | Duration: 238 days 00:00:00
+Buy date: 2017-08-27 | Buy price: 2359.87    | Sell date: 2017-10-22 | Sell price: 2528.16    | Profit: 168290.00  7.131  % | Duration: 56 days 00:00:00
+Buy date: 2018-01-14 | Buy price: 2529.55    | Sell date: 2018-02-11 | Sell price: 2507.24    | Profit: -22310.00  -0.882 % | Duration: 28 days 00:00:00
+Buy date: 2018-05-13 | Buy price: 2233.35    | Sell date: 2018-06-03 | Sell price: 2213.24    | Profit: -20110.00  -0.900 % | Duration: 21 days 00:00:00
+Buy date: 2018-06-10 | Buy price: 2190.26    | Sell date: 2018-10-14 | Sell price: 2264.20    | Profit: 73940.00   3.376  % | Duration: 126 days 00:00:00
+Buy date: 2018-12-02 | Buy price: 2225.39    | Sell date: 2019-03-10 | Sell price: 2333.11    | Profit: 107720.00  4.840  % | Duration: 98 days 00:00:00
+Buy date: 2019-06-30 | Buy price: 2308.32    | Sell date: 2019-08-11 | Sell price: 2216.51    | Profit: -91810.00  -3.977 % | Duration: 42 days 00:00:00
+Buy date: 2019-10-13 | Buy price: 2121.16    | Sell date: 2019-12-15 | Sell price: 2073.11    | Profit: -48050.00  -2.265 % | Duration: 63 days 00:00:00
+Buy date: 2020-01-05 | Buy price: 2151.74    | Sell date: 2020-02-02 | Sell price: 2154.28    | Profit: 2540.00    0.118  % | Duration: 28 days 00:00:00
+Buy date: 2020-05-03 | Buy price: 1601.91    | Sell date: 2020-09-06 | Sell price: 1829.79    | Profit: 227880.00  14.226 % | Duration: 126 days 00:00:00
+Buy date: 2020-11-22 | Buy price: 1749.41    | Sell date: 2021-02-14 | Sell price: 1957.73    | Profit: 208320.00  11.908 % | Duration: 84 days 00:00:00
+Buy date: 2021-05-09 | Buy price: 2037.59    | Sell date: 2021-08-01 | Sell price: 2242.41    | Profit: 204820.00  10.052 % | Duration: 84 days 00:00:00
+Buy date: 2022-01-16 | Buy price: 2311.93    | Sell date: 2022-01-30 | Sell price: 2273.81    | Profit: -38120.00  -1.649 % | Duration: 14 days 00:00:00
+Buy date: 2022-04-03 | Buy price: 2115.58    | Sell date: 2022-05-01 | Sell price: 1973.31    | Profit: -142270.00 -6.725 % | Duration: 28 days 00:00:00
+Buy date: 2022-07-24 | Buy price: 1620.13    | Sell date: 2022-09-18 | Sell price: 1534.68    | Profit: -85450.00  -5.274 % | Duration: 56 days 00:00:00
+Buy date: 2022-10-30 | Buy price: 1411.62    | Sell date: 2023-02-19 | Sell price: 1848.04    | Profit: 436420.00  30.916 % | Duration: 112 days 00:00:00
+Buy date: 2023-05-07 | Buy price: 1923.09    | Sell date: 2023-08-20 | Sell price: 2105.31    | Profit: 182220.00  9.475  % | Duration: 105 days 00:00:00
+Buy date: 2023-11-05 | Buy price: 2103.73    | Sell date: 2024-01-21 | Sell price: 2248.58    | Profit: 144850.00  6.885  % | Duration: 77 days 00:00:00
+Buy date: 2024-02-25 | Buy price: 2371.05    | Sell date: 2024-03-10 | Sell price: 2424.70    | Profit: 53650.00   2.263  % | Duration: 14 days 00:00:00
+=========================================================================================================================================================
+Total earnings: 3957030.0 generated using 2596160 units of borrowed capital, which needs to be returned
+Return on Investment ROI: 52.419%
+
+
