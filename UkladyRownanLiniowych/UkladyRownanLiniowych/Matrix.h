@@ -73,7 +73,7 @@ public:
         for (size_t i = 0; i < rows; ++i) {
             for (size_t j = 0; j < other.cols; ++j) {
                 for (size_t k = 0; k < cols; ++k) {
-                    result(i, j) += data[i][k] * other.data[k][j];
+                    result(i, j) += (data[i][k] * other.data[k][j]);
                 }
             }
         }
@@ -116,8 +116,14 @@ public:
             throw std::invalid_argument("Matrix must be square");
         }
         for (size_t i = 0; i < rows; ++i) {
-            if (i > 0) data[i - 1][i] = value;     // Diagonal below main
-            if (i < rows - 1) data[i + 1][i] = value; // Diagonal above main
+            if (i > 0)
+            {
+                data[i - 1][i] = value;     // Diagonal below main
+            }
+            if (i < rows - 1)
+            {
+                data[i + 1][i] = value; // Diagonal above main
+            }
         }
     }
 
@@ -126,8 +132,14 @@ public:
             throw std::invalid_argument("Matrix must be square");
         }
         for (size_t i = 0; i < rows; ++i) {
-            if (i > 1) data[i - 2][i] = value;     // Diagonal below second
-            if (i < rows - 2) data[i + 2][i] = value; // Diagonal above second
+            if (i > 1)
+            {
+                data[i - 2][i] = value;     // Diagonal below second
+            }
+            if (i < rows - 2) 
+            {
+                data[i + 2][i] = value; // Diagonal above second
+            }
         }
     }
 
@@ -145,8 +157,8 @@ public:
     }
 
 
-    Matrix jacobi(Matrix& b, double tolerance = 1e-9) const {
-        if (rows != cols || rows != b.getRows()) {
+    Matrix jacobi(Matrix& b, double tolerance = 1e-9, double maxError = 1e9 , bool skipFile = false) const {
+        if (rows != cols || cols != b.getRows()) {
             throw std::invalid_argument("Matrix and vector dimensions must match");
         }
 
@@ -158,12 +170,12 @@ public:
 
         auto startTime = std::chrono::high_resolution_clock::now();
 
-        while (error > tolerance) {
+        while (error > tolerance && error < maxError) {
             for (size_t i = 0; i < rows; ++i) {
                 double sum = 0;
                 for (size_t j = 0; j < cols; ++j) {
                     if (i != j) {
-                        sum += data[i][j] * x(j, 0);
+                        sum += (data[i][j] * x(j, 0));
                     }
                 }
                 xNew(i, 0) = (b(i, 0) - sum) / data[i][i];
@@ -177,26 +189,28 @@ public:
             iterations++;
         }
         auto endTime = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime);
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
 
         std::cout << "Jacobi! \n";
         std::cout << "Iterations: " << iterations << "\n";
-        std::cout << "Used time: " << double(duration.count())/1000 << " ms \n";
+        std::cout << "Used time: " << double(duration.count())/1000 << " s \n";
 
-        std::ofstream file;
-        file.open("jacobi_error.txt");
-        for (int i = 0; i < errorCollection.size(); i++)
+        if (skipFile == false)
         {
-            file << errorCollection[i] << "\n";
+            std::ofstream file;
+            file.open("jacobi_error.txt");
+            for (int i = 0; i < errorCollection.size(); i++)
+            {
+                file << errorCollection[i] << "\n";
+            }
+            file.close();
         }
-        file.close();
-
         return x;
     }
 
-    Matrix gaussSeidel(Matrix& b, double tolerance = 1e-9) const {
-        if (rows != cols || rows != b.getRows()) {
+    Matrix gaussSeidel(Matrix& b, double tolerance = 1e-9, double maxError = 1e9, bool skipFile = false) const {
+        if (rows != cols || cols != b.getRows()) {
             throw std::invalid_argument("Matrix and vector dimensions must match");
         }
 
@@ -207,7 +221,7 @@ public:
         std::vector<double> errorCollection;
 
         auto startTime = std::chrono::high_resolution_clock::now();
-        while (error > tolerance) {
+        while (error > tolerance && error < maxError) {
             for (int i = 0; i < rows; i++)
             {
                 double sum1 = 0, sum2 = 0;
@@ -229,21 +243,108 @@ public:
             iterations++;
         }
         auto endTime = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime);
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
 
         std::cout << "Gauss-Seidel! \n";
         std::cout << "Iterations: " << iterations << "\n";
-        std::cout << "Used time: " << double(duration.count()) / 1000 << " ms \n";
+        std::cout << "Used time: " << double(duration.count()) / 1000 << " s \n";
 
-        std::ofstream file;
-        file.open("gauss_error.txt");
-        for (int i = 0; i < errorCollection.size(); i++)
+        if (skipFile == false)
         {
-            file << errorCollection[i] << "\n";
+            std::ofstream file;
+            file.open("gauss_error.txt");
+            for (int i = 0; i < errorCollection.size(); i++)
+            {
+                file << errorCollection[i] << "\n";
+            }
+            file.close();
         }
-        file.close();
+        return x;
+    }
 
+    Matrix lu(Matrix& b, bool skipFile = false) const {
+        /*
+        * Ax = b and A = L * U, so
+        * L*U*x = b
+        * L*y = b -> forward substitution for finding 'y', where y is a part of solve ('x').
+        * U*x = y -> backward substitution for finding 'x'.
+        */
+        
+        if (rows != cols || cols != b.getRows()) {
+            throw std::invalid_argument("Matrix and vector dimensions must match");
+        }
+
+        Matrix L(rows, cols);
+        Matrix U(rows, cols);
+        Matrix x(rows, 1);
+        Matrix y(rows, 1);
+
+        auto startTime = std::chrono::high_resolution_clock::now();
+        
+        this->luDecomposition(L, U);
+        y = y.forwardSubstitution(L, b);
+        x = x.backwardSubstitution(U, y);
+        Matrix residual = (*this) * x - b;
+        
+        double error = residual.norm();
+        auto endTime = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+
+        std::cout << "LU! \n";
+        std::cout << "Iterations: " << "1" << "\n";
+        std::cout << "Used time: " << double(duration.count()) / 1000 << " s \n";
+        std::cout << "Error: " << error << "\n";
+
+        if (skipFile == false)
+        {
+            std::ofstream file;
+            file.open("lu_error.txt");
+            file << error << "\n";
+            file.close();
+        }
+
+        return x;
+    }
+
+    Matrix forwardSubstitution(Matrix& L, Matrix& b) const {
+        if (L.getRows() != L.getCols() || L.getCols() != b.getRows()) {
+            std::cout << "Error! \n";
+            throw std::invalid_argument("Matrix and vector dimensions must match");
+        }
+
+        Matrix x(rows, 1);
+        for (int i = 0; i < rows; i++)
+        {
+            double sum = 0.0;
+            for (int j = 0; j < i; j++)
+            {
+                sum += (L(i, j) * x(j,0));
+            }
+
+            x(i, 0) = (b(i, 0) - sum);
+        }
+        return x;
+    }
+
+    Matrix backwardSubstitution(Matrix& U, Matrix& y) const {
+        if (U.getRows() != U.getCols() || U.getCols() != y.getRows()) {
+            std::cout << "Error! \n";
+            throw std::invalid_argument("Matrix and vector dimensions must match");
+        }
+        
+        int rows = U.getRows();
+        Matrix x(rows, 1);
+
+        for (int i = rows - 1; i >= 0; i--)
+        {
+            double sum = 0.0;
+            for (int j = i+1; j < rows; j++)
+            {
+                sum += (U(i, j) * x(j, 0));
+            }
+            x(i, 0) = (y(i, 0) - sum) / U(i, i);
+        }
         return x;
     }
 
@@ -252,19 +353,27 @@ public:
             throw std::invalid_argument("Matrix must be square for LU factorization");
         }
 
-        for (size_t i = 0; i < rows; ++i) {
+
+
+        for (size_t i = 0; i < rows; ++i) 
+        {
             L(i, i) = 1.0;  // Diagonal of L is 1
-            for (size_t j = i; j < cols; ++j) {
+            for (size_t j = i; j < cols; ++j) 
+            {
                 double sum = 0;
-                for (size_t k = 0; k < i; ++k) {
-                    sum += L(i, k) * U(k, j);
+                for (size_t k = 0; k < i; ++k) 
+                {
+                    sum += (L(i, k) * U(k, j));
                 }
                 U(i, j) = data[i][j] - sum;
             }
-            for (size_t j = i + 1; j < rows; ++j) {
+
+            for (size_t j = i + 1; j < rows; ++j) 
+            {
                 double sum = 0;
-                for (size_t k = 0; k < i; ++k) {
-                    sum += L(j, k) * U(k, i);
+                for (size_t k = 0; k < i; ++k) 
+                {
+                    sum += ((L(j, k) * U(k, i)));
                 }
                 L(j, i) = (data[j][i] - sum) / U(i, i);
             }

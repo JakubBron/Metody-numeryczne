@@ -1,0 +1,88 @@
+Task A & B
+Jacobi!
+Iterations: 30
+Used time: 3.921 s
+Gauss-Seidel!
+Iterations: 20
+Used time: 1.39 s
+
+task C
+Jacobi!
+Iterations: 93
+Used time: 7.155 s
+Gauss-Seidel!
+Iterations: 37
+Used time: 2.491 s
+
+task D
+LU!
+Iterations: 1
+Used time: 11.125 s
+Error: 3.6075e-13
+
+task E
+
+N = 100
+
+Jacobi!
+Iterations: 3
+Used time: 0.003 s
+Gauss-Seidel!
+Iterations: 1
+Used time: 0.001 s
+LU!
+Iterations: 1
+Used time: 0.014 s
+Error: 7.6985e-16
+
+N = 500
+
+Jacobi!
+Iterations: 3
+Used time: 0.062 s
+Gauss-Seidel!
+Iterations: 2
+Used time: 0.049 s
+LU!
+Iterations: 1
+Used time: 1.696 s
+Error: 1.75009e-15
+
+N = 1000
+
+Jacobi!
+Iterations: 4
+Used time: 0.323 s
+Gauss-Seidel!
+Iterations: 2
+Used time: 0.166 s
+LU!
+Iterations: 1
+Used time: 16.082 s
+Error: 2.4032e-15
+
+N = 2000
+
+Jacobi!
+Iterations: 4
+Used time: 1.317 s
+Gauss-Seidel!
+Iterations: 2
+Used time: 0.829 s
+LU!
+Iterations: 1
+Used time: 177.765 s
+Error: 3.31961e-15
+
+N = 3000
+
+Jacobi!
+Iterations: 4
+Used time: 2.825 s
+Gauss-Seidel!
+Iterations: 2
+Used time: 1.485 s
+LU!
+Iterations: 1
+Used time: 473.523 s
+Error: 3.92946e-15
