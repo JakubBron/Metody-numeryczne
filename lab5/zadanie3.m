@@ -51,7 +51,7 @@ for i = 1:length(N)
     V = vandermonde_matrix(ni);
     
     % Niech wektor b zawiera wartości funkcji liniowej nieznacznie zaburzone
-    b = linspace(0,a1,ni)' + rand(ni,1)*1e-10;
+    b = linspace(0,a1,ni)' + rand(ni,1)*1e-6;
     reference_coefficients = [ 0; a1; zeros(ni-2,1) ]; % tylko a1 jest niezerowy
     
     % Wyznacznie współczynników wielomianu interpolującego

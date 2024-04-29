@@ -10,7 +10,7 @@ y_coarse = linspace(0, 1, N);
 [X_coarse, Y_coarse] = meshgrid(x_coarse, y_coarse);
 
 % Wyznaczenie wartości funkcji oryginalnej w węzłach
-F_coarse = cos(4 * x_coarse)' .* sin(32 * pi * y_coarse); % zadanie A: zmień definicję funkcji interpolowanej
+F_coarse = 2 * cos(4 * x_coarse)' .* sin(30 * pi * y_coarse + 2137); % zadanie A: zmień definicję funkcji interpolowanej
 
 MN = M*N;
 xvec_coarse = reshape(X_coarse, MN, 1);
