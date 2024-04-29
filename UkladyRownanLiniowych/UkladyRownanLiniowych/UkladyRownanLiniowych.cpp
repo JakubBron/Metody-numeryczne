@@ -96,8 +96,8 @@ void taskE()
 			
 		}
 
-		A.jacobi(b, true);
-		A.gaussSeidel(b, true);
+		A.jacobi(b, 1e-9, 1e9, true);
+		A.gaussSeidel(b, 1e-9, 1e9, true);
 		A.lu(b, true);
 	}
 }
