@@ -9,8 +9,8 @@ x_coarse = linspace(0, 1, M);
 y_coarse = linspace(0, 1, N);
 [X_coarse, Y_coarse] = meshgrid(x_coarse, y_coarse);
 
-% Wyznaczenie wartości funkcji oryginalnej w węzłach
-F_coarse = (1./(1 + 31.*(x_coarse.*2-1).^2))' .* 1./(1 + 25.*(y_coarse.*2-1).^2);
+% Wyznaczenie wartości funkcji oryginalnej w węzłach - funkcja Jana Pawła Rungego
+F_coarse = (1./(1 + 21.*(x_coarse.*2-1).^5))' .* 1./(1 + 37.*(y_coarse.*2-1).^2);
 
 MN = M*N;
 xvec_coarse = reshape(X_coarse, MN, 1);
