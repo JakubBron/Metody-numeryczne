@@ -1,0 +1,23 @@
+﻿  Interpolacja.cpp
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Matrix.h(180,27): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(17,17): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(22,21): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(26,22): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(87,20): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(118,20): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(121,21): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Matrix.h(10,14): error C2011: 'Matrix': 'class' type redefinition
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Matrix.h(10): message : see declaration of 'Matrix'
+  Interpolation_tests.cpp
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Matrix.h(180,27): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(17,17): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(22,21): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(26,22): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(87,20): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(118,20): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation.h(121,21): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation_tests.cpp(20,21): warning C4018: '<': signed/unsigned mismatch
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Interpolation_tests.cpp(46,21): warning C4018: '<': signed/unsigned mismatch
+  Matrix_tests.cpp
+C:\STUDIA PG\Metody numeryczne\LabyProjekty\Interpolacja\Interpolacja\Matrix.h(180,27): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
