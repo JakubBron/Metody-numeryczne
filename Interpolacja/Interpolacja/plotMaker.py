@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-import numpy as np
 import os
 
 def dataset_chelm(numberOfNodes, choosingType, datasetName):
