@@ -156,8 +156,8 @@ Za pomocą interpolacji Lagrange'a obliczono wartości funkcji w 512 punktach. P
 
 == Podsumowanie interpolacji metodą Lagrange'a dla równoodległych węzłów
 
-Jak można zauważyć, wyniki interpolacji metodą Lagrange'a nie spełniają oczekiwań. W ogólnym niepoprawnie iterpolują każdą z badancych tras. W przypadku małej ilości węzłów (10) wyniki są mało dokładne, ale za to efekt Rungego jest słaby. Wraz ze wzrostem ilości węzłów, wyniki interpolacji pogarszają się znacząco. Widać wyraźnie, że nasila się efekt Rungego, czyli oscylacje wielomianu interpolacyjnego w okolicach krańców przedziału. Już przy 20 węzłach wynik interpolacji jest bardzo zaburzony a wyznaczony profil wysokościowy jest gorzej niż błędny. 
-Jedyną względnie dobrą interpolacją okazała się być ta dla 10 węzłów dla danych z pliku `stale.txt`(grzbiet bardzo bliski dodatnio nachylonej prostej - rzadki przypadek). Dla danych z pliku `tczew_starogard.txt` wykres interpolacji dla 10 węzłów oddaje ogólny trend trasy między Tczewem a Starogardem, choć z dużym błędem co do konkretnych wartości. 
+Jak można zauważyć, wyniki interpolacji metodą Lagrange'a nie spełniają oczekiwań. W ogólnym przypadku niepoprawnie iterpolują każdą z badancych tras. W przypadku małej ilości węzłów (10) wyniki są mało dokładne, ale za to efekt Rungego jest słaby. Wraz ze wzrostem ilości węzłów, wyniki interpolacji pogarszają się znacząco. Widać wyraźnie, że nasila się efekt Rungego, czyli oscylacje wielomianu interpolacyjnego w okolicach krańców przedziału. Już przy 20 węzłach wynik interpolacji jest bardzo zaburzony a wyznaczony profil wysokościowy jest gorzej niż błędny. 
+Jedyną względnie dobrą interpolacją okazała się być ta dla 10 węzłów dla danych z pliku `stale.txt` (grzbiet bardzo bliski dodatnio nachylonej prostej - rzadki przypadek). Dla danych z pliku `tczew_starogard.txt` wykres interpolacji dla 10 węzłów oddaje ogólny trend trasy między Tczewem a Starogardem, choć z dużym błędem co do konkretnych wartości. 
 #pagebreak()
 
 = Wyniki interpolacji metodą Lagrange'a dla węzłów Czebyszewa
@@ -216,14 +216,14 @@ W celu zminimalizowania efektu Rungego zastosowano interpolację metodą Lagrang
       figure(image("plots/tczew_starogard_100_chebyshev.png"), caption: "100 węzłów")
     )
   )
-    Wyniki interpolacji dla tego zestawu danych są dobre dla 50 i więcej węzłów. W przeciwieństwie do poprzednich rozważań ani 10 ani 20 węzłów interpolacyjnych nie oddają charakteru trasy. Dla 50 węzłów widać wyraźnie trendy lokalne w bardzo wąskich przedziałach. Dla 100 węzłów interpolacja jest bardzo dokładna i pokrywa oryginalny wykres w 90%, przy czym obszary niepokryte są wąskie i w różnych częściach wykresu (są to strome szczyty lub doliny o bardzo stromych zboczach o niewielkiej wysokości).
+    Wyniki interpolacji dla tego zestawu danych są dobre dla 50 i więcej węzłów. W przeciwieństwie do poprzednich rozważań ani 10 ani 20 węzłów interpolacyjnych nie oddają charakteru trasy. Dla 50 węzłów widać wyraźnie trendy lokalne w bardzo wąskich przedziałach. Dla 100 węzłów interpolacja jest bardzo dokładna i pokrywa oryginalny wykres w 90%, przy czym obszary niepokryte są wąskie i w różnych częściach wykresu (są to strome szczyty lub doliny o bardzo stromych zboczach i o niewielkiej wysokości).
 
 == Podsumowanie interpolacji metodą Lagrange'a dla węzłów Czebyszewa
-Jak można wywnioskować z powyższych wykresów, interpolacja metodą Lagrange'a dla węzłów Czebyszewa jest bardziej stabilna niż dla równoodległych węzłów. Dla trzech z czterech zestawów danych uzyskano dobre wyniki. Efekt Rungego jest praktycznie niewidoczny. Nawet dla 100 węzłów interpolacja jest bardzo dokładna. Należy pamiętać, że użycie węzłów Czebyszewa może mieć negatywny wpływ na jakość interpolacji w środku przedziału.
+Jak można wywnioskować z powyższych wykresów, interpolacja metodą Lagrange'a dla węzłów Czebyszewa jest bardziej stabilna niż dla równoodległych węzłów. Dla trzech z czterech zestawów danych uzyskano dobre wyniki. Efekt Rungego nie został zaobserwowany. Nawet dla 100 węzłów interpolacja jest bardzo dokładna. Należy pamiętać, że użycie węzłów Czebyszewa może mieć negatywny wpływ na jakość interpolacji w środku przedziału.
 
 W przypadku jednego zestawu danych, wyniki interpolacji dla węzłów Czebyszewa nie spełniają oczekiwań. Pokazuje to, że pomimo zastosowania węzłów Czebyszewa, nie zawsze jesteśmy w stanie uzyskać dokładną interpolację. Wyniki uzyskane tą metodą są lepsze niż dla równoodległych węzłów, ale nie są idealne. Dlatego metoda Lagrange'a nie jest odpowiednia do interpolacji profilu wysokościowego, w szczególności dla tras o dużych zmianach wysokości, w szczególności na krótkich odcinkach.
 
-Warto zauważyć, że w przypadku dużcyh danych wejściowych (512 punktów), wybór węzłów Czebyszewa był możliwy. W praktyce, dla mniejszej ilości danych, dobór węzłów Czebyszewa może być trudny ze względu na niedostatecznie dużą koncentrację danych na skrajach przedziału. W projekcie zaobserwowano to zjawisko dla 100 węzłów.
+Warto zauważyć, że w przypadku dużcyh danych wejściowych (512 punktów), wybór węzłów Czebyszewa był możliwy, choć nie obyło się bez komplikacji. W praktyce, dla mniejszej ilości danych, dobór węzłów Czebyszewa może być trudny ze względu na niedostatecznie dużą koncentrację danych na skrajach przedziału. 
 
 
 = Wyniki interpolacji metodą funkcji sklejanych
