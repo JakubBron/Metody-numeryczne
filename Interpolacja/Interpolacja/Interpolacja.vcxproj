@@ -18,6 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Interpolacja.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Helpers.h" />
+    <ClInclude Include="Interpolation.h" />
+    <ClInclude Include="Matrix.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,17 +146,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Interpolacja.cpp" />
-    <ClCompile Include="Interpolation_tests.cpp" />
-    <ClCompile Include="Matrix_tests.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Interpolation.h" />
-    <ClInclude Include="Interpolation_tests.h" />
-    <ClInclude Include="Matrix.h" />
-    <ClInclude Include="Matrix_tests.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

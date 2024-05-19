@@ -18,24 +18,15 @@
     <ClCompile Include="Interpolacja.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Matrix_tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Interpolation_tests.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Matrix.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Matrix_tests.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Interpolation.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Interpolation_tests.h">
+    <ClInclude Include="Matrix.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Helpers.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
