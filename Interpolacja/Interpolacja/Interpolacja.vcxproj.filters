@@ -29,5 +29,8 @@
     <ClInclude Include="Helpers.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

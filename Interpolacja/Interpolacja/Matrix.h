@@ -162,11 +162,8 @@ public:
         auto endTime = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
-        std::cout << "LU! \n";
-        std::cout << "Iterations: " << "1" << "\n";
-        std::cout << "Used time: " << double(duration.count()) / 1000 << " s \n";
-        std::cout << "Error: " << error << "\n";
-
+        std::cout << "(" << double(duration.count()) / 1000 << " s  ";
+        std::cout << "error: " << error << ")";
         return x;
     }
 
@@ -212,29 +209,38 @@ public:
     }
 
     void pivot(Matrix& L, Matrix& U, Matrix& P, int i) const {
-       /* cout << "pivot() gets: \n";
+        /*cout << "pivot() gets: \n";
         cout <<"L = " << L << "\n";
         cout <<"U = "<< U << "\n";
         cout <<"P = " << P << "\n";
         cout << "i = " << i << "\n";*/
         size_t maxIndex = i;
-        for (size_t k = i + 1; k < rows; ++k) 
+        double maxValue = 0.0;
+        for (size_t k = i; k < rows; ++k) 
         {
-            if (abs(U(k, i)) > abs(U(maxIndex, i))) 
-            {
+            if (abs(U(k, i)) > maxValue) 
+            {   
+                maxValue = abs(U(k, i));
                 maxIndex = k;
             }
         }
 
         if (maxIndex != i) 
         {
-            for (size_t j = 0; j < rows; ++j)
+            // swap rows
+            for (size_t j = 0; j < cols; ++j)
             {
                 std::swap(P(i, j), P(maxIndex, j));
                 std::swap(U(i, j), U(maxIndex, j));
                 std::swap(L(i, j), L(maxIndex, j));
             }
         }
+
+        /*cout << "pivot() result: \n";
+        cout << "L = " << L << "\n";
+        cout << "U = " << U << "\n";
+        cout << "P = " << P << "\n";
+        cout << "i = " << i << "\n";*/
     }
 
     void luDecomposition(Matrix& L, Matrix& U, Matrix& P) const {

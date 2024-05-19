@@ -47,7 +47,7 @@ vector<double> interpolate_lagrange(const vector<double>& nodes_x, const vector<
 	return interpolated;
 }
 
-vector<double> interpolate_spline(const vector<double>& nodes, const vector<pair<double, double> >& allPoints, size_t nodesNumber)
+vector<double> interpolate_spline(const vector<double>& nodes_x, const vector<double>& nodes_y, const vector<pair<double, double> >& allPoints, size_t nodesNumber)
 {
 	/*
 	*	In general, S_i(x) = a_i+b_i*x+c_i*x^2+d_i*x^3
@@ -63,7 +63,7 @@ vector<double> interpolate_spline(const vector<double>& nodes, const vector<pair
 	*/
 
 
-	size_t Nodes = allPoints.size();	// number of subsets
+	size_t Nodes = nodes_x.size();	// number of subsets
 	size_t N = 4*(Nodes - 1);			
 	Matrix A(N, N);
 	Matrix b(N, 1);
@@ -73,40 +73,40 @@ vector<double> interpolate_spline(const vector<double>& nodes, const vector<pair
 
 	// S_0(x_0) = a_0 = y_0 <=> a0 = y0
 	A(0, 0) = 1;
-	b(0, 0) = allPoints[0].second;
+	b(0, 0) = nodes_y[0];
 
 	// S_0(x_1) = y_1 <=> a0+b0*h+c0*h^2+d0*h^3 = y1
-	double h = allPoints[1].first - allPoints[0].first;
+	double h = nodes_x[1] - nodes_x[0];
 	A(1, 0) = 1;
 	A(1, 1) = h;
 	A(1, 2) = h*h;
 	A(1, 3) = h*h*h;		// <=> h*h*h
-	b(1, 0) = allPoints[1].second;
+	b(1, 0) = nodes_y[1];
 
 	// S''_0(x0) = 0
 	A(2, 2) = 1;
 	b(2, 0) = 0;
 
 	// S''_{n-1}(x_n) = 0
-	h = allPoints[Nodes - 1].first - allPoints[Nodes - 2].first;
+	h = nodes_x[Nodes - 1] - nodes_x[Nodes - 2];
 	A(3, 4*(Nodes - 2)+2) = 2;
 	A(3, 4*(Nodes - 2)+3) = 6*h;
 	b(3, 0) = 0;
 
 	for (int i = 1; i < Nodes-1; i++)
 	{
-		h = allPoints[i].first - allPoints[i - 1].first;
+		h = nodes_x[i] - nodes_x[i - 1];
 
 		// S_i(x_i) = y_i
 		A(4*i, 4*i) = 1;
-		b(4*i, 0) = allPoints[i].second;
+		b(4*i, 0) = nodes_y[i];
 
 		// S_i( x_i+1 ) = y_i+1
 		A(4*i+1, 4*i) = 1;
 		A(4*i+1, 4*i+1) = h;
 		A(4*i+1, 4*i+2) = h*h;
 		A(4*i+1, 4*i+3) = h*h*h ;
-		b(4*i+1, 0) = allPoints[i+1].second;
+		b(4*i+1, 0) = nodes_y[i+1];
 
 		// S'_i(x_i) = S'_{ i - 1 }(x_i)
 		A(4*i+2, 4*(i - 1)+1) = 1;
@@ -124,14 +124,14 @@ vector<double> interpolate_spline(const vector<double>& nodes, const vector<pair
 
 	x = A.solve(b);
 	bool isPresent = false;
-	for (int i = 0; i < nodesNumber; i++)
+	for (int i = 0; i < allPoints.size(); i++)
 	{
 		isPresent = false;
 		for (int j = 0; j < Nodes-1; j++)
 		{
-			if (allPoints[j].first <= nodes[i] && nodes[i] <= allPoints[j+1].first)
+			if (nodes_x[j] <= allPoints[i].first && allPoints[i].first <= nodes_x[j+1])
 			{
-				h = nodes[i] - allPoints[j].first;
+				h = allPoints[i].first - nodes_x[j];
 				int j_ = 4*j;
 				yp = x(j_, 0) + x(j_+1, 0)*h + x(j_+2, 0)*h*h + x(j_+3, 0)*h*h*h;
 				interpolated.push_back(yp);
@@ -144,7 +144,6 @@ vector<double> interpolate_spline(const vector<double>& nodes, const vector<pair
 			interpolated.push_back( interpolated.size()==0 ? 0.0 : interpolated[interpolated.size()-1] );
 		}
 	}
-
 	return interpolated;
 }
 

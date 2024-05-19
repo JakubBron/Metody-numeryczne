@@ -1,7 +1,0 @@
-﻿  UkladyRownanLiniowych.cpp
-C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\UkladyRownanLiniowych\Matrix.h(203,31): warning C4018: '<': signed/unsigned mismatch
-C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\UkladyRownanLiniowych\Matrix.h(225,31): warning C4018: '<': signed/unsigned mismatch
-C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\UkladyRownanLiniowych\Matrix.h(232,39): warning C4018: '<': signed/unsigned mismatch
-C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\UkladyRownanLiniowych\Matrix.h(257,31): warning C4018: '<': signed/unsigned mismatch
-C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\UkladyRownanLiniowych\Matrix.h(317,27): warning C4018: '<': signed/unsigned mismatch
-  UkladyRownanLiniowych.vcxproj -> C:\STUDIA PG\Metody numeryczne\LabyProjekty\UkladyRownanLiniowych\Debug\UkladyRownanLiniowych.exe

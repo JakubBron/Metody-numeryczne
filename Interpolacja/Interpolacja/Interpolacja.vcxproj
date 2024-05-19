@@ -25,6 +25,7 @@
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Interpolation.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Process.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

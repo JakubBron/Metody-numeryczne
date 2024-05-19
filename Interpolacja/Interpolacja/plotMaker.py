@@ -2,18 +2,19 @@ from matplotlib import pyplot as plt
 import numpy as np
 import os
 
-def dataset_chelm(numberOfNodes, choosingType):
-    f = open('data/chelm.txt', 'r')
+def dataset_chelm(numberOfNodes, choosingType, datasetName):
+    path = f'data/{datasetName}.txt'
+    f = open(path, 'r')
     rawdata = f.read().split('\n')
     f.close()
 
     if choosingType != "all":
-        path = f'interpolated/interpolated_chelm.txt_{str(numberOfNodes)}_{choosingType}.txt'
+        path = f'interpolated/interpolated_{datasetName}.txt_{str(numberOfNodes)}_{choosingType}.txt'
         f = open(path, 'r')
         rawdataInterpolated = f.read().split('\n')
         f.close()
 
-        path = f'interpolated/interpolated_chelm.txt_{str(numberOfNodes)}_{choosingType}_NODES.txt'
+        path = f'interpolated/interpolated_{datasetName}.txt_{str(numberOfNodes)}_{choosingType}_NODES.txt'
         f = open(path, 'r')
         rawdataNodes = f.read().split('\n')
         f.close()
@@ -41,9 +42,11 @@ def dataset_chelm(numberOfNodes, choosingType):
     
     # make plot 
     if choosingType == "all":
-        plt.title("Chelm dataset, length vs elevation. Original")
+        text = f"'{datasetName}' dataset, length vs elevation. Original"
+        plt.title(text)
     else:
-        plt.title("Chelm dataset, length vs elevation. Number of nodes: " + str(numberOfNodes) + ", " + choosingType)
+        text = f"'{datasetName}' dataset, length vs elevation. Number of nodes: {numberOfNodes}, {choosingType}"
+        plt.title(text)
     
     
     plt.semilogy(length, elevation, label="Original data")
@@ -54,41 +57,33 @@ def dataset_chelm(numberOfNodes, choosingType):
     plt.xlabel("Length [m]")
     plt.ylabel("Elevation (log) [m]")    
     if choosingType == "all":
-        plt.savefig("plots/chelm_" + choosingType + "_nodes.png")
+        path = f"plots/{datasetName}_" + choosingType + "_nodes.png"
+        plt.savefig(path)
     else:
-        plt.savefig("plots/chelm_" + str(numberOfNodes) + "_" + choosingType + ".png")
+        path = f"plots/{datasetName}_" + str(numberOfNodes) + "_" + choosingType + ".png"
+        plt.savefig(path)
     
     plt.show()
 
 
 def main():
     numberOfNodes = [10, 20, 50, 100]
-    #numberOfNodes = [100]
-    choosingTypes = ["linspace", "chebyshev"]
+    choosingTypes = ["linspace", "chebyshev", "spline"]
     if not os.path.exists("plots"):
         os.makedirs("plots")
-###################################################################################################
-    # dataset: chelm.txt
-    """
-    dataset_chelm(-1, "all")
-    """
+    datasetNames = ["chelm", "stale", "hel_yeah", "tczew_starogard"]
     
-    """
-    for nodes in numberOfNodes:
-        dataset_chelm(nodes, choosingTypes[0])
-    """
-    
-    for nodes in numberOfNodes:
-        dataset_chelm(nodes, choosingTypes[1])
-    
-    
-    #dataset: hel_yeah.txt
-    #dataset_helyeah(-1, "all")
+    for datasetName in datasetNames:
+        dataset_chelm(-1, "all", datasetName)
 
-    #dataset: GlebiaChallengera.txt
-    #dataset_GlebiaChallengera(-1, "all")
-
-    #dataset: tczew_starogard.txt
-    #dataset_tczew_starogard(-1, "all")
+        for nodes in numberOfNodes:
+            dataset_chelm(nodes, choosingTypes[0], datasetName)
+        
+        for nodes in numberOfNodes:
+            dataset_chelm(nodes, choosingTypes[1], datasetName)
+        
+        for nodes in numberOfNodes:
+            dataset_chelm(nodes, choosingTypes[2], datasetName)
+    
 
 main()
